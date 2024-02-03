@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container" ng-ap="myApp" ng-controller="FormController">
+        <div class="textintro">
+
+            <h1>Form Validation</h1>
+            <p>{{mag}}</p>
+        </div>
+
+        <form name="myform">
+            <input type="text" name="firstname" placeholder="First Name" ng-modal="user.firstname" ng-required="true">
+            <p class="error" ng-show="myform.firstname.$invalid">fill out your first name.</p>
+
+
+            <input type="text" name="lastname" placeholder="Last Name" ng-modal="user.lastname" ng-required="true">
+            <p class="error" ng-show="myform.lasttname.$invalid">fill out your last name.</p>
+
+
+
+
+            <input type="email" name="email" placeholder="Email" ng-modal="user.email" ng-required="true">
+            <p class="error" ng-show="myform.email.$invalid">Enter your correct email.</p>
+
+
+
+            <input type="password" name="password" placeholder="Password" ng-modal="user.password" ng-minlength="6" ng-required="true">
+            <p class="error" ng-show="myform.password.$invalid">Password should be atleast 6 Character long</p>
+
+
+
+            <input type="number" name="phone" placeholder="Phone Number" ng-modal="user.phone" ng-required="true">
+            <p class="error" ng-show="myform.phone.$invalid">Enter your phone number</p>
+
+
+
+            <button type="submit" class="btn">Submit</button> </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
+
+</html>
